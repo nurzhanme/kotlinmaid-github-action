@@ -1,0 +1,27 @@
+name: 'kotlinmaid'
+author: 'Nurzhan Aitbayev'
+description: 'create UML diagrams using mermaid from kotlin classes'
+branding:
+  icon: book-open
+  color: green
+inputs:
+  entity-path:
+    description: 'The path where the entities are located.'
+    required: true
+    default: '.'
+  package-name:
+    description: 'The package name of entities.'
+    required: true
+    default: '.'
+  uml-file:
+    description: 'File to update. Default to UML.md'
+    required: true
+    default: 'UML.md'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.entity-path }}
+    - ${{ inputs.package-name }}
+    - ${{ inputs.uml-file }}
+  entrypoint: "/entrypoint.sh"
