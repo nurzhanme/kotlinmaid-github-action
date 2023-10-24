@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-dotnet /app/Sharpmaid.dll $@
+java -jar ./app.jar $@
