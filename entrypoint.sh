@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-java -jar /app/app.jar $@
+java -jar ./app.jar $@
